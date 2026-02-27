@@ -54,7 +54,11 @@ export const login=async(req,res,next)=>{
         throw new Apierror(400,"an error occured while assigning token");
        }      
        res.status(200)
-       .cookie("token",token)
+       .cookie("token",token,{
+        httpOnly:true,
+        secure:true,
+        sameSite:"none"
+       })
        .json(
         new Apiresponse(200,existed,"user logged in succesfully")
        )
