@@ -16,7 +16,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:" http://localhost:5173",
+    origin:"https://fsociall.vercel.app/",
     credentials:true
 }))
 
@@ -28,19 +28,6 @@ app.use("/",(req,res)=>{
     res.send("everything is working");
 })
 
-app.get("/api/me",authmiddelware,(req,res,next)=>{
-    try {
-        if(!req.body){
-            throw new Apierror(400,"user is not logged in");
-        }
-        res.status(200)
-        .json(
-            new Apiresponse(200,{},"user is logged in")
-        )
-    } catch (error) {
-        console.log(error);
-        next(error)
-    }
-})
+
 
 export {app}
