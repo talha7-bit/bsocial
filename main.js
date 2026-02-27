@@ -16,7 +16,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:"https://fsociall.vercel.app/",
+    origin:process.env.ORIGIN,
     credentials:true
 }))
 
