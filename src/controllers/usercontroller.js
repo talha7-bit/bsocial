@@ -53,6 +53,7 @@ export const login=async(req,res,next)=>{
        if(!token){
         throw new Apierror(400,"an error occured while assigning token");
        }      
+       console.log("hitting");
        res.status(200)
        .cookie("token",token,{
         httpOnly:true,
