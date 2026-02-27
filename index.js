@@ -5,7 +5,7 @@ import dotenv from "dotenv"
 dotenv.config();
 connectdb();
 
-const PORT=process.env.PORT || 3000
+const PORT=process.env.PORT || 8080
 
 app.listen(PORT,(req,res)=>{
     console.log(`server is running on http://localhost:${PORT}`);

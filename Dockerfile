@@ -14,8 +14,7 @@ RUN npm install
 COPY . .
 
 # Set PORT environment variable to 3000
-ENV PORT=3000
-EXPOSE 3000
+EXPOSE 8080
 
 # Command to start your app
 CMD ["npm", "start"]
